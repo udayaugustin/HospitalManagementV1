@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BookingManager.Views.AddBooking"
+             Title="Booking">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Entry Placeholder="Name" x:Name="Name"/>
+            <Entry Placeholder="Phone No" x:Name="PhoneNo"/>
+            <StackLayout>
+                <Label Text="Checkin Date"/>
+                <DatePicker x:Name="CheckInDate"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Checkout Date"/>
+                <DatePicker x:Name="CheckOutDate"/>
+            </StackLayout>
+            <Entry Placeholder="Total Booking Cost" x:Name="TotalBookingCost"/>
+            <Entry Placeholder="Advance Amount" x:Name="AdvanceAmount"/>
+            <Entry Placeholder="Mode of Payment" x:Name="PaymentMode"/>
+            <Button Text="Add"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
