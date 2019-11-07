@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookingManager.Views.EditBooking" Title="Edit Booking">
+    <NavigationPage.TitleView>
+        <Label Text="Edit Booking" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
     <ScrollView>
         <StackLayout Spacing="10">
             <Entry Placeholder="Name" x:Name="Name"/>

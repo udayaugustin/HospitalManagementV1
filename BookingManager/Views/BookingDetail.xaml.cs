@@ -28,8 +28,8 @@ namespace BookingManager.Views
         {
             Name.Text = booking.Name;
             PhoneNo.Text = booking.PhoneNo;
-            CheckInDate.Text = Convert.ToString(booking.CheckinDate.ToString("MM/dd/yyyy"));
-            CheckOutDate.Text = Convert.ToString(booking.CheckoutDate.ToString("MM/dd/yyyy"));
+            CheckInDate.Text = Convert.ToString(booking.CheckinDate.ToString("MMM-dd-yy (dddd)"));
+            CheckOutDate.Text = Convert.ToString(booking.CheckoutDate.ToString("MMM-dd-yy (dddd)"));
             TotalBookingCost.Text = Convert.ToString(booking.BookingCost);
             AdvanceAmount.Text = Convert.ToString(booking.AdvanceAmount);
             PaymentMode.Text = booking.PaymentMode;

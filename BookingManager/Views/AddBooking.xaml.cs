@@ -30,8 +30,8 @@ namespace BookingManager.Views
             {
                 Name = name,
                 PhoneNo = phoneNo,
-                CheckinDate = checkinDate,
-                CheckoutDate = checkoutDate,
+                CheckinDate = checkinDate.Date,
+                CheckoutDate = checkoutDate.Date,
                 BookingCost = Convert.ToInt32(bookingcost),
                 AdvanceAmount = Convert.ToInt32(advanceAmount),
                 PaymentMode = paymentMode,

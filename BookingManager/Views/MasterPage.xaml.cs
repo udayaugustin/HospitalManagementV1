@@ -27,8 +27,8 @@ namespace BookingManager.Views
                 new MenuItem{ Title = "New Booking"},
                 new MenuItem{ Title = "Booking List"},
                 new MenuItem{ Title = "Todays Booking List"},
-                new MenuItem{ Title = "All Bookings"},
-                new MenuItem{ Title = "Update Payment"},                
+                new MenuItem{ Title = "Report"},
+                            
             };
 
             listView.ItemsSource = menuList;
@@ -50,6 +50,12 @@ namespace BookingManager.Views
                 case "Booking List":
                     mainPage.Detail = new NavigationPage(new BookingList());
                 break;
+                case "Todays Booking List":
+                    mainPage.Detail = new NavigationPage(new BookingList(true));
+                    break;
+                case "Report":
+                    mainPage.Detail = new NavigationPage(new ReportPage());
+                    break;
             }
 
             mainPage.IsPresented = false;

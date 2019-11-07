@@ -13,7 +13,7 @@ namespace BookingManager
 
             //MainPage = new MainPage();            
 
-            var detailPage = new NavigationPage(new AddBooking());
+            var detailPage = new NavigationPage(new BookingList());
             MainPage = new MasterPage();
 
             var masterPage = MainPage as MasterDetailPage;

@@ -2,27 +2,37 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookingManager.Views.BookingDetail" Title="Booking Details">
-    <StackLayout>
-        <StackLayout Spacing="10">
-            <Label Text="Guest Name"/>
-            <Label  x:Name="Name"/>
-            <Label Text="Contact Number"/>
-            <Label  x:Name="PhoneNo"/>
-            <StackLayout>
-                <Label Text="Checkin Date"/>
-                <Label x:Name="CheckInDate"/>
-            </StackLayout>
-            <StackLayout>
-                <Label Text="Checkout Date"/>
-                <Label x:Name="CheckOutDate"/>
-            </StackLayout>
-            <Label Text="Booking cost"/>
-            <Label x:Name="TotalBookingCost"/>
-            <Label Text="Advance Amount"/>
-            <Label x:Name="AdvanceAmount"/>
-            <Label Text="Mode of Payment" />
-            <Label x:Name="PaymentMode"/>
-            
-        </StackLayout>
-    </StackLayout>
+    <NavigationPage.TitleView>
+        <Label Text="Booking Details" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Guest Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label  x:Name="Name" Grid.Row="0" Grid.Column="1" FontSize="18"/>
+        <Label Text="Contact Number" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+            <Label  x:Name="PhoneNo" Grid.Row="1" Grid.Column="1" FontSize="18"/>
+        <Label Text="Checkin Date" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="CheckInDate" Grid.Row="2" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Checkout Date" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="CheckOutDate" Grid.Row="3" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Booking cost" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="TotalBookingCost" Grid.Row="4" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Advance Amount" Grid.Row="5" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="AdvanceAmount" Grid.Row="5" Grid.Column="1"  FontSize="18"/>
+        <Label Text="Mode of Payment" Grid.Row="6" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
+        <Label x:Name="PaymentMode" Grid.Row="6" Grid.Column="1"  FontSize="18"/>
+    </Grid>
 </ContentPage>

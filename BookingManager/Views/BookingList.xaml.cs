@@ -15,10 +15,13 @@ namespace BookingManager.Views
     {
         SQLiteAsyncConnection connection;
         List<Booking> bookingList;
+        private bool isShowOnlyTodayList;
 
-        public BookingList()
+        public BookingList(bool isShowOnlyTodayList = false)
         {
             InitializeComponent();
+
+            this.isShowOnlyTodayList = isShowOnlyTodayList;
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             GetData();
 
@@ -28,6 +31,8 @@ namespace BookingManager.Views
         {
             bookingList = new List<Booking>();
             bookingList = await connection.Table<Booking>().ToListAsync();
+            if(isShowOnlyTodayList)
+                bookingList = bookingList.Where(b => b.CheckinDate == DateTime.Today.Date).ToList();
             listview.ItemsSource = bookingList;
 
         }
@@ -65,7 +70,7 @@ namespace BookingManager.Views
 
         }
 
-        private async void ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ItemTapped(object sender, SelectedItemChangedEventArgs e)
         {
            var booking = e.SelectedItem as Booking;
 

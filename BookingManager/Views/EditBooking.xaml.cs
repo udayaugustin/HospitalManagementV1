@@ -29,8 +29,8 @@ namespace BookingManager.Views
         {
             Name.Text = booking.Name;
             PhoneNo.Text = booking.PhoneNo;
-            CheckInDate.Date = booking.CheckinDate;
-            CheckOutDate.Date = booking.CheckoutDate;
+            CheckInDate.Date = booking.CheckinDate.Date;
+            CheckOutDate.Date = booking.CheckoutDate.Date;
             TotalBookingCost.Text = Convert.ToString(booking.BookingCost);
             AdvanceAmount.Text = Convert.ToString(booking.AdvanceAmount);
             PaymentMode.Text = booking.PaymentMode;
