@@ -15,13 +15,13 @@ namespace BookingManager.Views
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
         }
 
-        private void Add(object sender, EventArgs e)
+        private async void Add(object sender, EventArgs e)
         {
             var name = Name.Text;
             var phoneNo = PhoneNo.Text;
-            var checkinDate = CheckInDate.Text;
-            var checkoutDate = CheckOutDate.Text;
-            var totalBookingCost = TotalBookingCost.Text;
+            var checkinDate = CheckInDate.Date;
+            var checkoutDate = CheckOutDate.Date;
+            var bookingcost = TotalBookingCost.Text;
             var advanceAmount = AdvanceAmount.Text;
             var paymentMode = PaymentMode.Text;
 
@@ -31,7 +31,14 @@ namespace BookingManager.Views
                 PhoneNo = phoneNo,
                 CheckinDate = checkinDate,
                 CheckoutDate = checkoutDate,
-            }
+                BookingCost = bookingcost,
+                AdvanceAmount = advanceAmount,
+                
+            };
+            await connection.InsertAsync(booking);
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new BookingList());
+            
         }
     }
 }

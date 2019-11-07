@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BookingManager.Views.AddBooking"
-             Title="Booking">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookingManager.Views.EditBooking" Title="Edit Booking">
     <ScrollView>
         <StackLayout Spacing="10">
             <Entry Placeholder="Name" x:Name="Name"/>
@@ -16,8 +17,8 @@
             <Entry Placeholder="Total Booking Cost" x:Name="TotalBookingCost"/>
             <Entry Placeholder="Advance Amount" x:Name="AdvanceAmount"/>
             <Entry Placeholder="Mode of Payment" x:Name="PaymentMode"/>
-            <Button Text="Add" Clicked="Add"/>
+            <Button Text="Update" Clicked="Update"/>
         </StackLayout>
-        </ScrollView>
+    </ScrollView>
 
 </ContentPage>

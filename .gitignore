@@ -3,3 +3,7 @@
 ################################################################################
 
 /BookingManager/bin/Debug/netstandard2.0
+/BookingManager/obj
+/.vs/BookingManager
+/BookingManager.Android
+/BookingManager.iOS/obj

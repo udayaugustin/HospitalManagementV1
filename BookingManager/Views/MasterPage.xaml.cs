@@ -47,8 +47,8 @@ namespace BookingManager.Views
                     mainPage.Detail = new NavigationPage(new AddBooking());
                 break;
 
-                case "Booking Report":
-                    mainPage.Detail = new NavigationPage(new AddBooking());
+                case "Booking List":
+                    mainPage.Detail = new NavigationPage(new BookingList());
                 break;
             }
 
