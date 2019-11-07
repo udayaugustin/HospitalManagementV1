@@ -21,6 +21,9 @@ namespace BookingManager.Views
             var phoneNo = PhoneNo.Text;
             var checkinDate = CheckInDate.Date;
             var checkoutDate = CheckOutDate.Date;
+            var totalBookingCost = TotalBookingCost.Text;
+            var checkinDate = CheckInDate.Date;
+            var checkoutDate = CheckOutDate.Date;
             var bookingcost = TotalBookingCost.Text;
             var advanceAmount = AdvanceAmount.Text;
             var paymentMode = PaymentMode.Text;
