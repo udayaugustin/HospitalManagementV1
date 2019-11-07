@@ -19,8 +19,8 @@ namespace BookingManager.Views
         {
             var name = Name.Text;
             var phoneNo = PhoneNo.Text;
-            var checkinDate = CheckInDate.Text;
-            var checkoutDate = CheckOutDate.Text;
+            var checkinDate = CheckInDate.Date;
+            var checkoutDate = CheckOutDate.Date;
             var totalBookingCost = TotalBookingCost.Text;
             var advanceAmount = AdvanceAmount.Text;
             var paymentMode = PaymentMode.Text;
@@ -31,7 +31,10 @@ namespace BookingManager.Views
                 PhoneNo = phoneNo,
                 CheckinDate = checkinDate,
                 CheckoutDate = checkoutDate,
-            }
+                BookingCost = Convert.ToInt32(totalBookingCost),
+                AdvanceAmount = Convert.ToInt32(advanceAmount),
+                PaymentMode = paymentMode
+            };
         }
     }
 }
