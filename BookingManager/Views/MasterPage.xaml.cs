@@ -24,7 +24,7 @@ namespace BookingManager.Views
         {
             var menuList = new List<MenuItem>
             {
-                new MenuItem{ Title = "Add Booking"},
+                new MenuItem{ Title = "New Booking"},
                 new MenuItem{ Title = "Booking List"},
                 new MenuItem{ Title = "Todays Booking List"},
                 new MenuItem{ Title = "All Bookings"},
@@ -43,7 +43,7 @@ namespace BookingManager.Views
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
-                case "Add Booking":
+                case "New Booking":
                     mainPage.Detail = new NavigationPage(new AddBooking());
                 break;
 

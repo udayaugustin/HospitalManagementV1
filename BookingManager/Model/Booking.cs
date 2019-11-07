@@ -15,9 +15,9 @@ namespace BookingManager
 
         public DateTime CheckoutDate { get; set; }
 
-        public string BookingCost { get; set; }
+        public int BookingCost { get; set; }
 
-        public string AdvanceAmount { get; set; }
+        public int AdvanceAmount { get; set; }
 
         public string PaymentMode { get; set; }
     }

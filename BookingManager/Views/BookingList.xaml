@@ -20,10 +20,10 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Name}" Grid.Row="0" Grid.Column="0"/>
-                            <Label Text="{Binding CheckinDate}" Grid.Row="1" Grid.Column="0"/>
-                            <Label Text="{Binding BookingCost}" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
-                            <Label Text="{Binding AdvanceAmount}" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding Name, StringFormat= 'Name:{0}'}" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="{Binding CheckinDate, StringFormat='Check-in:{0}'}" FontSize="15" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="{Binding BookingCost,  StringFormat='TotalCost:{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding AdvanceAmount,  StringFormat='Advance:{0}'}" FontSize="18" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -10,11 +10,11 @@
             <Label  x:Name="PhoneNo"/>
             <StackLayout>
                 <Label Text="Checkin Date"/>
-                <DatePicker x:Name="CheckInDate"/>
+                <Label x:Name="CheckInDate"/>
             </StackLayout>
             <StackLayout>
                 <Label Text="Checkout Date"/>
-                <DatePicker x:Name="CheckOutDate"/>
+                <Label x:Name="CheckOutDate"/>
             </StackLayout>
             <Label Text="Booking cost"/>
             <Label x:Name="TotalBookingCost"/>

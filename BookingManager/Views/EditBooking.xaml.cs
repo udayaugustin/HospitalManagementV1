@@ -31,8 +31,8 @@ namespace BookingManager.Views
             PhoneNo.Text = booking.PhoneNo;
             CheckInDate.Date = booking.CheckinDate;
             CheckOutDate.Date = booking.CheckoutDate;
-            TotalBookingCost.Text = booking.BookingCost;
-            AdvanceAmount.Text = booking.AdvanceAmount;
+            TotalBookingCost.Text = Convert.ToString(booking.BookingCost);
+            AdvanceAmount.Text = Convert.ToString(booking.AdvanceAmount);
             PaymentMode.Text = booking.PaymentMode;
         }
         private async void Update(object sender, EventArgs e)
@@ -41,8 +41,8 @@ namespace BookingManager.Views
             _selectedbooking.PhoneNo = PhoneNo.Text;
             _selectedbooking.CheckinDate = CheckInDate.Date;
             _selectedbooking.CheckoutDate = CheckOutDate.Date;
-            _selectedbooking.BookingCost = TotalBookingCost.Text;
-            _selectedbooking.AdvanceAmount = AdvanceAmount.Text;
+            _selectedbooking.BookingCost = Convert.ToInt32(TotalBookingCost.Text);
+            _selectedbooking.AdvanceAmount = Convert.ToInt32(AdvanceAmount.Text);
             _selectedbooking.PaymentMode = PaymentMode.Text;
             await connection.UpdateAsync(_selectedbooking);
             var mainPage = Application.Current.MainPage as MasterDetailPage;
