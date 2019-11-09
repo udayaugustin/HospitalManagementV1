@@ -70,9 +70,9 @@ namespace BookingManager.Views
 
         }
 
-        private async void ItemTapped(object sender, SelectedItemChangedEventArgs e)
+        private async void Listview_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-           var booking = e.SelectedItem as Booking;
+            var booking = e.Item as Booking;
 
             await Navigation.PushAsync(new BookingDetail(booking));
         }

@@ -2,11 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BookingManager.Views.ReportPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <Label Text="Report Page" Style="{StaticResource NavigationTitle}"/>
+    </NavigationPage.TitleView>
+    <StackLayout>
+    <Grid Padding="15,0,0,0">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+        <Label Text="From" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"  TextColor="Black" FontSize="18"/>
+        <DatePicker x:Name="Fromdate" Grid.Row="0" Grid.Column="1" TextColor="Black" FontSize="18"/>
+        <Label Text="To" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" TextColor="Black" FontSize="18"/>
+        <DatePicker x:Name="Todate" Grid.Row="0" Grid.Column="3" TextColor="Black" FontSize="18"/>
+            <Button Text="Submit" Clicked="Button_Clicked" Grid.Row="0" Grid.Column="4" FontSize="18"/>
+        </Grid>
+    <StackLayout>
+            <Label Text="BookingList" Style="{StaticResource BalanceTag}" FontSize="20" HeightRequest="60" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="#e3e8e5" />
+        
+            <ListView x:Name="listview" HasUnevenRows="True" SeparatorColor="Gray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
+                                <Label Text="{Binding CheckinDate, StringFormat='In: {0:MMM-dd-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+    </StackLayout>
+    </StackLayout>
 </ContentPage>

@@ -22,17 +22,34 @@ namespace BookingManager.Views
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             _selectedbooking = booking;
             GetData(booking);
+           
+             
         }
 
         private async void GetData(Booking booking)
         {
             Name.Text = booking.Name;
             PhoneNo.Text = booking.PhoneNo;
-            CheckInDate.Text = Convert.ToString(booking.CheckinDate.ToString("MMM-dd-yy (dddd)"));
-            CheckOutDate.Text = Convert.ToString(booking.CheckoutDate.ToString("MMM-dd-yy (dddd)"));
-            TotalBookingCost.Text = Convert.ToString(booking.BookingCost);
-            AdvanceAmount.Text = Convert.ToString(booking.AdvanceAmount);
+            CheckInDate.Text = Convert.ToString(booking.CheckinDate.ToString("MMM-dd-yy (ddd)"));
+            CheckOutDate.Text = Convert.ToString(booking.CheckoutDate.ToString("MMM-dd-yy (ddd)"));
+            TotalBookingCost.Text = "Rs."+ Convert.ToString(booking.BookingCost);
+            AdvanceAmount.Text = "Rs."+ Convert.ToString(booking.AdvanceAmount);
             PaymentMode.Text = booking.PaymentMode;
+          
         }
-	}
+
+        private async void Update(object sender, EventArgs e)
+        {
+           
+            var Reminingcost = _selectedbooking.BookingCost - _selectedbooking.PaidAmount;
+            var recivedcash = Convert.ToInt32(RecivedAmount.Text);
+            var balanceAmount = Reminingcost - recivedcash;
+           
+            _selectedbooking.BalanceAmount = balanceAmount;
+            await connection.UpdateAsync(_selectedbooking);
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new BookingList());
+
+        }
+    }
 }

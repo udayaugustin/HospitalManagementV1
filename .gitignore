@@ -7,3 +7,4 @@
 /.vs/BookingManager
 /BookingManager.Android
 /BookingManager.iOS/obj
+/BookingManager.iOS/bin/iPhoneSimulator/Debug

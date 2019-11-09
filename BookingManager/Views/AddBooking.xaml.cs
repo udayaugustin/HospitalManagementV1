@@ -22,8 +22,8 @@ namespace BookingManager.Views
             var checkinDate = CheckInDate.Date;
             var checkoutDate = CheckOutDate.Date;
             var totalBookingCost = TotalBookingCost.Text;
-            var bookingcost = TotalBookingCost.Text;
-            var advanceAmount = AdvanceAmount.Text;
+            var bookingcost = Convert.ToInt32(TotalBookingCost.Text);
+            var advanceAmount = Convert.ToInt32(AdvanceAmount.Text);
             var paymentMode = PaymentMode.Text;
 
             var booking = new Booking
@@ -35,7 +35,9 @@ namespace BookingManager.Views
                 BookingCost = Convert.ToInt32(bookingcost),
                 AdvanceAmount = Convert.ToInt32(advanceAmount),
                 PaymentMode = paymentMode,
-                
+                PaidAmount = Convert.ToInt32(advanceAmount),
+                BalanceAmount = (bookingcost - advanceAmount),
+
             };
             await connection.InsertAsync(booking);
             var mainPage = Application.Current.MainPage as MasterDetailPage;

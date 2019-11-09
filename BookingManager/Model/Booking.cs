@@ -22,5 +22,7 @@ namespace BookingManager
         public string PaymentMode { get; set; }
 
         public int BalanceAmount { get; set; }
+
+        public int PaidAmount { get; set; }
     }
 }

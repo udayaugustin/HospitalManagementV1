@@ -6,7 +6,7 @@
         <Label Text="Booking List" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout>
-        <ListView  x:Name="listview" ItemTapped="ItemTapped" HasUnevenRows="True">
+        <ListView  x:Name="listview" ItemTapped="Listview_ItemTapped" HasUnevenRows="True" SeparatorColor="Gray" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -23,13 +23,10 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Name, StringFormat= 'Name:{0}'}" FontSize="18" Grid.Row="0" Grid.Column="0"/>
-                            <Label Text="{Binding CheckinDate, StringFormat='Check-in: {0:MMM-dd-yy (dddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
-                            <Label Text="{Binding CheckoutDate, StringFormat='Check-out: {0:MMM-dd-yy (dddd)}'}" FontSize="18" Grid.Row="2" Grid.Column="0"/>
-
-                            <Label Text="{Binding BookingCost,  StringFormat='TotalCost:{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
-                            <Label Text="{Binding AdvanceAmount,  StringFormat='Advance:{0}'}" FontSize="18" Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
-                            <Label Text="{Binding BalanceAmount,  StringFormat='Balance:{0}'}" FontSize="18" FontAttributes="Bold" TextColor="Black" Grid.Row="2" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
+                            <Label Text="{Binding CheckinDate, StringFormat='In: {0:MMM-dd-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                            <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                            <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
 
                         </Grid>
                     </ViewCell>
