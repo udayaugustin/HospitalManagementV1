@@ -5,6 +5,11 @@
     <NavigationPage.TitleView>
         <Label Text="Booking Details" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Call" Clicked="Call"                 
+                 Order="Primary"
+                 Priority="0" />
+    </ContentPage.ToolbarItems>
     <Grid Padding="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>

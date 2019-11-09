@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -50,6 +50,11 @@ namespace BookingManager.Views
             var mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new BookingList());
 
+        }
+
+        private async void Call(object sender, EventArgs e)
+        {
+            PhoneDialer.Open(_selectedbooking.PhoneNo);
         }
     }
 }
