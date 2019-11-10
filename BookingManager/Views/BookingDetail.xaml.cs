@@ -47,7 +47,7 @@ namespace BookingManager.Views
                 var recivedcash = Convert.ToInt32(RecivedAmount.Text);
 
                 var balanceAmount = Reminingcost - recivedcash;
-
+                _selectedbooking.PaidAmount = _selectedbooking.PaidAmount + recivedcash;
                 _selectedbooking.BalanceAmount = balanceAmount;
                 await connection.UpdateAsync(_selectedbooking);
             }
