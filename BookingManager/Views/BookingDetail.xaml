@@ -10,7 +10,7 @@
                  Order="Primary"
                  Priority="0" />
     </ContentPage.ToolbarItems>
-    <Grid Padding="10">
+    <Grid Padding="10" RowSpacing="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -25,8 +25,8 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <Label Text="Guest Name" Grid.Row="0" Grid.Column="0" FontAttributes="Bold" TextColor="Black" FontSize="18"/>
@@ -45,6 +45,8 @@
         <Label x:Name="PaymentMode" Grid.Row="6" Grid.Column="1"  FontSize="18"/>
         <Label Text="Recived Amount" Grid.Row="9" Grid.Column="0" VerticalOptions="Center" FontSize="20"  Style="{StaticResource BalanceTag}"/>
         <Entry Placeholder="Enter Amount" Grid.Row="9" Grid.Column="1" FontSize="20"  x:Name="RecivedAmount" />
-        <Button Text="Update" Clicked="Update" Grid.Row="10" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Update" Clicked="Update" Grid.Row="10"  Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Button Text="Completed" Clicked="Completed"  Grid.Row="10" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+
     </Grid>
 </ContentPage>

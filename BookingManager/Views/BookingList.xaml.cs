@@ -30,7 +30,9 @@ namespace BookingManager.Views
         private async void GetData()
         {
             bookingList = new List<Booking>();
+
             bookingList = await connection.Table<Booking>().ToListAsync();
+            bookingList = bookingList.Where(b => b.IsCompleted == false).ToList();
             if(isShowOnlyTodayList)
                 bookingList = bookingList.Where(b => b.CheckinDate == DateTime.Today.Date).ToList();
             listview.ItemsSource = bookingList;

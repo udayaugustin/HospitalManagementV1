@@ -24,5 +24,7 @@ namespace BookingManager
         public int BalanceAmount { get; set; }
 
         public int PaidAmount { get; set; }
+
+        public bool IsCompleted { get; set; }
     }
 }

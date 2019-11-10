@@ -42,19 +42,31 @@ namespace BookingManager.Views
         {
            
             var Reminingcost = _selectedbooking.BookingCost - _selectedbooking.PaidAmount;
-            var recivedcash = Convert.ToInt32(RecivedAmount.Text);
-            var balanceAmount = Reminingcost - recivedcash;
-           
-            _selectedbooking.BalanceAmount = balanceAmount;
-            await connection.UpdateAsync(_selectedbooking);
+            if (RecivedAmount.Text != null)
+            {
+                var recivedcash = Convert.ToInt32(RecivedAmount.Text);
+
+                var balanceAmount = Reminingcost - recivedcash;
+
+                _selectedbooking.BalanceAmount = balanceAmount;
+                await connection.UpdateAsync(_selectedbooking);
+            }
             var mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new BookingList());
 
         }
 
-        private async void Call(object sender, EventArgs e)
+        private void Call(object sender, EventArgs e)
         {
             PhoneDialer.Open(_selectedbooking.PhoneNo);
+        }
+
+        private async void Completed(object sender, EventArgs e)
+        {
+            _selectedbooking.IsCompleted = true;
+            await connection.UpdateAsync(_selectedbooking);
+            var mainPage = Application.Current.MainPage as MasterDetailPage;
+            mainPage.Detail = new NavigationPage(new BookingList());
         }
     }
 }
