@@ -18,6 +18,7 @@ namespace BookingManager.Views
             InitializeComponent();
 
             SetupMenu();
+            mainPage = Application.Current.MainPage as MasterDetailPage;
         }
 
         public void SetupMenu()
@@ -37,9 +38,7 @@ namespace BookingManager.Views
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            mainPage = Application.Current.MainPage as MasterDetailPage;
-
+        {            
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
@@ -61,6 +60,9 @@ namespace BookingManager.Views
             mainPage.IsPresented = false;
         }
 
-
+        private void Synch(object sender, EventArgs e)
+        {
+            mainPage.Detail = new NavigationPage(new SyncData());
+        }
     }
 }

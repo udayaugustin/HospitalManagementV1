@@ -22,6 +22,10 @@ namespace BookingManager.Views
             InitializeComponent();
 
             this.isShowOnlyTodayList = isShowOnlyTodayList;
+            if (isShowOnlyTodayList)
+            {
+                Title = "Todays Booking List ";
+            }
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             GetData();
 
