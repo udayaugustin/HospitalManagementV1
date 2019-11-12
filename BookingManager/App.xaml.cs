@@ -13,11 +13,7 @@ namespace BookingManager
 
             //MainPage = new MainPage();            
 
-            var detailPage = new NavigationPage(new BookingList());
-            MainPage = new MasterPage();
-
-            var masterPage = MainPage as MasterDetailPage;
-            masterPage.Detail = detailPage;
+            MainPage = new InitialValidation();
         }
 
         protected override void OnStart()
