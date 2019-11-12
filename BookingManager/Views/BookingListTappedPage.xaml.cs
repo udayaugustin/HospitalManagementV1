@@ -31,7 +31,9 @@ namespace BookingManager.Views
         private async void GetData(string pageTitle)
         {
             var allBookings = new List<Booking>();
-            allBookings = await connection.Table<Booking>().Where(b => b.IsCompleted == false).ToListAsync();
+            allBookings = await connection.Table<Booking>().Where(b => b.IsCompleted == false)
+                .OrderByDescending(b => b.CheckinDate)                
+                .ToListAsync();
 
             bookingList = new ObservableCollection<Booking>(allBookings);
 
@@ -78,7 +80,10 @@ namespace BookingManager.Views
 
         private void DisplayTodayBookings()
         {
-            var items = bookingList.Where(b => b.CheckinDate.Date == DateTime.Today.Date).ToList();
+            var items = bookingList.Where(b => b.CheckinDate.Date == DateTime.Today.Date)
+                .OrderByDescending(b => b.Id)
+                .ToList();
+
             TodayListview.ItemsSource = items;
 
             TodayNoRecordLabel.IsVisible = !(items.Count > 0);                
@@ -86,7 +91,9 @@ namespace BookingManager.Views
 
         private void DisplayFutureBookings()
         {
-            var items = bookingList.Where(b => b.CheckinDate.Date > DateTime.Today.Date).ToList();
+            var items = bookingList.Where(b => b.CheckinDate.Date > DateTime.Today.Date)
+                .OrderByDescending(b => b.CheckinDate)
+                .ToList();
             FutureListview.ItemsSource = items;
 
             FutureNoRecordLabel.IsVisible = !(items.Count > 0);
