@@ -40,8 +40,17 @@ namespace BookingManager.Views
 
             };
             await connection.InsertAsync(booking);
+
+            var pageTitle = string.Empty;
+            if (booking.CheckinDate == DateTime.Today.Date)
+                pageTitle = "Today";
+            else if (booking.CheckinDate > DateTime.Now)
+                pageTitle = "Future";
+            else
+                pageTitle = "All";
+
             var mainPage = Application.Current.MainPage as MasterDetailPage;
-            mainPage.Detail = new NavigationPage(new BookingList());
+            mainPage.Detail = new NavigationPage(new BookingListTappedPage(pageTitle));
             
         }
     }

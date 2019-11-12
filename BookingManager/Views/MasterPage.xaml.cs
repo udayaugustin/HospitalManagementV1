@@ -25,15 +25,12 @@ namespace BookingManager.Views
             var menuList = new List<MenuItem>
             {
                 new MenuItem{ Title = "New Booking"},
-                new MenuItem{ Title = "Booking List"},
-                new MenuItem{ Title = "Todays Booking List"},
+                new MenuItem{ Title = "Booking List"},                
                 new MenuItem{ Title = "Report"},
                             
             };
 
             listView.ItemsSource = menuList;
-
-
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -46,12 +43,10 @@ namespace BookingManager.Views
                     mainPage.Detail = new NavigationPage(new AddBooking());
                 break;
 
-                case "Booking   List":
-                    mainPage.Detail = new NavigationPage(new BookingList());
+                case "Booking List":
+                    mainPage.Detail = new NavigationPage(new BookingListTappedPage("Today"));
                 break;
-                case "Todays Booking List":
-                    mainPage.Detail = new NavigationPage(new BookingList(true));
-                    break;
+                    
                 case "Report":
                     mainPage.Detail = new NavigationPage(new ReportPage());
                     break;

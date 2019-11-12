@@ -102,7 +102,7 @@ namespace BookingManager.Views
         private void NavigateToMasterPage()
         {
             var mainPage = Application.Current.MainPage;
-            var detailPage = new NavigationPage(new BookingList());
+            var detailPage = new NavigationPage(new BookingListTappedPage("Today"));
 
             mainPage = new MasterPage();
             (mainPage as MasterDetailPage).Detail = detailPage;

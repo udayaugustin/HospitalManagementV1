@@ -24,11 +24,10 @@ namespace BookingManager.Views
             this.isShowOnlyTodayList = isShowOnlyTodayList;
             if (isShowOnlyTodayList)
             {
-                Title = "Todays Booking List ";
+                Title = "Todays Booking List";
             }
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             GetData();
-
         }
 
         private async void GetData()
@@ -40,7 +39,6 @@ namespace BookingManager.Views
             if(isShowOnlyTodayList)
                 bookingList = bookingList.Where(b => b.CheckinDate == DateTime.Today.Date).ToList();
             listview.ItemsSource = bookingList;
-
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)
@@ -73,7 +71,6 @@ namespace BookingManager.Views
                 }
                 
             }
-
         }
 
         private async void Listview_ItemTapped(object sender, ItemTappedEventArgs e)

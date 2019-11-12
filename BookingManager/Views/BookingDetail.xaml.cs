@@ -1,16 +1,13 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace BookingManager.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class BookingDetail : ContentPage
 	{
         SQLiteAsyncConnection connection;
@@ -21,9 +18,7 @@ namespace BookingManager.Views
 			InitializeComponent ();
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             _selectedbooking = booking;
-            GetData(booking);
-           
-             
+            GetData(booking);                       
         }
 
         private async void GetData(Booking booking)
@@ -35,12 +30,11 @@ namespace BookingManager.Views
             TotalBookingCost.Text = "Rs."+ Convert.ToString(booking.BookingCost);
             AdvanceAmount.Text = "Rs."+ Convert.ToString(booking.AdvanceAmount);
             PaymentMode.Text = booking.PaymentMode;
-          
+            BalanceAmount.Text = "Rs."+(_selectedbooking.BookingCost - _selectedbooking.PaidAmount).ToString();
         }
 
         private async void Update(object sender, EventArgs e)
-        {
-           
+        {           
             var Reminingcost = _selectedbooking.BookingCost - _selectedbooking.PaidAmount;
             if (RecivedAmount.Text != null)
             {
@@ -53,7 +47,6 @@ namespace BookingManager.Views
             }
             var mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new BookingList());
-
         }
 
         private void Call(object sender, EventArgs e)

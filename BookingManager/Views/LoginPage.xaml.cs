@@ -39,9 +39,11 @@ namespace BookingManager.Views
 
         private async void Login(object sender, EventArgs e)
         {
+            Loader.IsRunning = true;
             if (!ConnectivityHelper.IsInternetAvailable)
             {
                 ErrorLabel.Text = "Please enable internet to login";
+                StopLoader();
                 return;
             }
 
@@ -53,12 +55,14 @@ namespace BookingManager.Views
                 if (!accountValidation.ValidateCredentials())
                 {
                     ErrorLabel.Text = "Login Failed";
+                    StopLoader();
                     return;
                 }
 
                 if (accountValidation.IsAccountExpired())
                 {
                     ErrorLabel.Text = "Your Account Expired. Please contact support.";
+                    StopLoader();
                     return;
                 }
 
@@ -80,6 +84,7 @@ namespace BookingManager.Views
 
         private void NavigateToMasterPage()
         {
+            StopLoader();
             var mainPage = Application.Current.MainPage;
             var detailPage = new NavigationPage(new BookingList());
 
@@ -87,6 +92,11 @@ namespace BookingManager.Views
             (mainPage as MasterPage).Detail = detailPage;
 
             Application.Current.MainPage = mainPage;
+        }
+
+        private void StopLoader()
+        {
+            Loader.IsRunning = false;
         }
     }
 }
