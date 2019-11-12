@@ -1,4 +1,5 @@
 ﻿using BookingManager.Helper;
+using BookingManager.Model;
 using SQLite;
 using System;
 using Xamarin.Forms;
@@ -21,6 +22,7 @@ namespace BookingManager.Views
 
         private async void Sync_Clicked(object sender, EventArgs e)
         {
+
             if (!ConnectivityHelper.IsInternetAvailable)
             {
                 await DisplayAlert("Alert!", "Please enable internet to Sync your Data", "OK");
@@ -28,7 +30,9 @@ namespace BookingManager.Views
             }
             sync.IsEnabled = false;
             indicator.IsRunning = true;
-            var result = await backupDB.SyncDBAsync();
+
+            var appInfo = await connection.Table<AppInfo>().FirstOrDefaultAsync();
+            var result = await backupDB.SyncDBAsync(appInfo.Username);
 
             if (result != true)
             {

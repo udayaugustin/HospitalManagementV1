@@ -7,6 +7,6 @@ namespace BookingManager
 {
     public interface IBackupDB
     {
-        Task<bool> SyncDBAsync();
+        Task<bool> SyncDBAsync(string username);
     }
 }

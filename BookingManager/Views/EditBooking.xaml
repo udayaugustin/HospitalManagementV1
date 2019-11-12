@@ -8,7 +8,7 @@
     <ScrollView>
         <StackLayout Spacing="10">
             <Entry Placeholder="Name" x:Name="Name"/>
-            <Entry Placeholder="Phone No" x:Name="PhoneNo"/>
+            <Entry Placeholder="Phone No" Keyboard="Telephone" x:Name="PhoneNo"/>
             <StackLayout>
                 <Label Text="Checkin Date"/>
                 <DatePicker x:Name="CheckInDate"/>
@@ -17,8 +17,8 @@
                 <Label Text="Checkout Date"/>
                 <DatePicker x:Name="CheckOutDate"/>
             </StackLayout>
-            <Entry Placeholder="Total Booking Cost" x:Name="TotalBookingCost"/>
-            <Entry Placeholder="Advance Amount" x:Name="AdvanceAmount"/>
+            <Entry Placeholder="Total Booking Cost" Keyboard="Numeric" x:Name="TotalBookingCost"/>
+            <Entry Placeholder="Advance Amount" Keyboard="Numeric" x:Name="AdvanceAmount"/>
             <Entry Placeholder="Mode of Payment" x:Name="PaymentMode"/>
             <Button Text="Update" Clicked="Update"/>
         </StackLayout>
