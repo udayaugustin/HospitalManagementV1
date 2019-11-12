@@ -17,8 +17,7 @@ namespace BookingManager.Views
         {
             InitializeComponent();
 
-            SetupMenu();
-            mainPage = Application.Current.MainPage as MasterDetailPage;
+            SetupMenu();            
         }
 
         public void SetupMenu()
@@ -38,7 +37,8 @@ namespace BookingManager.Views
         }
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {            
+        {
+            mainPage = Application.Current.MainPage as MasterDetailPage;
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
@@ -46,7 +46,7 @@ namespace BookingManager.Views
                     mainPage.Detail = new NavigationPage(new AddBooking());
                 break;
 
-                case "Booking List":
+                case "Booking   List":
                     mainPage.Detail = new NavigationPage(new BookingList());
                 break;
                 case "Todays Booking List":
@@ -62,6 +62,7 @@ namespace BookingManager.Views
 
         private void Synch(object sender, EventArgs e)
         {
+            mainPage = Application.Current.MainPage as MasterDetailPage;
             mainPage.Detail = new NavigationPage(new SyncData());
         }
     }
