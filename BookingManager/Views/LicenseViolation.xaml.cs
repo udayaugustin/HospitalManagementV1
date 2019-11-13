@@ -17,5 +17,9 @@ namespace BookingManager.Views
 			InitializeComponent ();
 		}
 
-	}
+        private void NaviagateToLogin(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new LoginPage();
+        }
+    }
 }

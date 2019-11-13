@@ -6,6 +6,7 @@
         <Label Text="Report Page" Style="{StaticResource NavigationTitle}"/>
     </NavigationPage.TitleView>
     <StackLayout>
+    <Label x:Name="TotalIncome" Margin="10,5" FontAttributes="Bold" FontSize="18" FontFamily="{StaticResource ProximaNovaBold}"/>
     <Grid Padding="15,0,0,0">
         <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -42,7 +43,7 @@
                                 <Label Text="{Binding Name}" FontSize="20" Style="{StaticResource BalanceTag}" Grid.Row="0" Grid.Column="0"/>
                                 <Label Text="{Binding CheckinDate, StringFormat='In: {0:MMM-dd-yy (ddd)}'}" FontSize="18" Grid.Row="1" Grid.Column="0"/>
                                 <Label Text="{Binding AdvanceAmount,  StringFormat='Advance: Rs.{0}'}" FontSize="18" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
-                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}"  FontSize="20" Style="{StaticResource BalanceTag}"  Grid.Row="1" Grid.Column="1" HorizontalOptions="EndAndExpand"/>
+                                <Label Text="{Binding BalanceAmount,  StringFormat='Balance: Rs.{0}'}" Style="{StaticResource BalanceAmount}" Grid.Row="1" Grid.Column="1"/>
 
                             </Grid>
                         </ViewCell>

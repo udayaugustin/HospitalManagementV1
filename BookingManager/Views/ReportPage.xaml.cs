@@ -22,6 +22,8 @@ namespace BookingManager.Views
             connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             GetData();
             ResultWrapper.IsVisible = false;
+            var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            Fromdate.Date = startDate;
         }
 
         private async void GetData()
@@ -35,10 +37,14 @@ namespace BookingManager.Views
             ResultWrapper.IsVisible = true;
             var From = Fromdate.Date;
             var To = Todate.Date;           
-            bookingList = bookingList.Where(b => b.CheckinDate.Date <= From && b.CheckinDate.Date >= To).ToList();
-            listview.ItemsSource = bookingList;
+            var items = bookingList.Where(b => b.CheckinDate.Date >= From && b.CheckinDate.Date <= To).ToList();
+            listview.ItemsSource = items;
 
-            if (bookingList.Count == 0)
+            var dateRange = "("+ From.ToString("dd-MMM") + " To " + To.ToString("dd-MMM")+")";
+            var incomeAmount = items.Sum(b => b.PaidAmount);
+            TotalIncome.Text = "Total Income : Rs."+ incomeAmount.ToString() + dateRange;
+
+            if (items.Count == 0)
                 NoRecordLabel.IsVisible = true;
             else
                 NoRecordLabel.IsVisible = false;
