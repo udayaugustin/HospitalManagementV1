@@ -131,7 +131,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BookingManager\BookingManager.csproj">
       <Project>{A041F6F4-F8F0-4547-99E3-A2DE1A22001F}</Project>
-      <Name>BookingManager</Name>
+      <Name>HospitalManagement</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
