@@ -1,0 +1,51 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{56847F11-2683-47E1-BED5-10C240906660}|Default">
+  <MonoDevelop.Ide.ItemProperties.BookingManager.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="HospitalManagement/Views/PatientDetailPage.xaml" Line="28" Column="40" />
+      <File FileName="HospitalManagement/Views/PatientDetailPage.xaml.cs" Line="23" Column="10" />
+      <File FileName="HospitalManagement/App.xaml" Line="52" Column="51" />
+      <File FileName="HospitalManagement/Views/MasterPage.xaml.cs" Line="42" Column="29" />
+      <File FileName="HospitalManagement/Views/AddPatient.xaml" Line="8" Column="33" />
+      <File FileName="HospitalManagement/Views/AddPatient.xaml.cs" Line="18" Column="10" />
+      <File FileName="HospitalManagement/App.xaml.cs" Line="15" Column="36" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HospitalManagement" expanded="True">
+            <Node name="HospitalManagement" expanded="True">
+              <Node name="Helper" expanded="True">
+                <Node name="ConnectivityHelper.cs" selected="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Css" expanded="True" />
+                <Node name="AddPatient.xaml" expanded="True" />
+                <Node name="MasterPage.xaml" expanded="True" />
+                <Node name="PatientDetailPage.xaml" expanded="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+            </Node>
+            <Node name="HospitalManagement.Android" expanded="True">
+              <Node name="Persistance" expanded="True" />
+            </Node>
+            <Node name="HospitalManagement.iOS" expanded="True">
+              <Node name="Persistance" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.HospitalManagement.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HospitalManagement.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.18958D04-5EBA-46C0-8B62-B2C34845EE6E" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
