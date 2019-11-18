@@ -12,8 +12,10 @@ namespace HospitalManagement
             InitializeComponent();
 
             //MainPage = new MainPage();            
+            MainPage = new MasterPage();
+            (MainPage as MasterDetailPage).Detail = new NavigationPage(new PatientDetailPage());
 
-            MainPage = new InitialValidation();
+            //MainPage = new NavigationPage(new PatientDetailPage());
         }
 
         protected override void OnStart()

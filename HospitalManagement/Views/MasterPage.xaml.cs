@@ -24,8 +24,8 @@ namespace HospitalManagement.Views
         {
             var menuList = new List<MenuItem>
             {
-                new MenuItem{ Title = "New Booking"},
-                new MenuItem{ Title = "Booking List"},                
+                new MenuItem{ Title = "Patient"},
+                new MenuItem{ Title = "New Treatment"},                
                 new MenuItem{ Title = "Report"},
                             
             };
@@ -39,17 +39,17 @@ namespace HospitalManagement.Views
             var menu = e.Item as MenuItem;
             switch (menu.Title)
             {
-                /*case "New Booking":
-                    mainPage.Detail = new NavigationPage(new AddBooking());
+                case "Patient":
+                    mainPage.Detail = new NavigationPage(new AddPatient());
                 break;
 
-                case "Booking List":
-                    mainPage.Detail = new NavigationPage(new BookingListTappedPage("Today"));
+                case "New Treatment":
+                    mainPage.Detail = new NavigationPage(new PatientDetailPage());
                 break;
                     
                 case "Report":
-                    mainPage.Detail = new NavigationPage(new ReportPage());
-                    break;*/
+                    mainPage.Detail = new NavigationPage(new MainPage());
+                    break;
             }
 
             mainPage.IsPresented = false;
