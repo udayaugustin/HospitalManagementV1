@@ -5,6 +5,7 @@
 /BookingManager/bin/Debug/netstandard2.0
 /BookingManager/obj
 /.vs/BookingManager
-/BookingManager.Android
+/BookingManager.Android/obj
+/BookingManager.Android/bin
 /BookingManager.iOS/obj
-/BookingManager.iOS/bin/iPhoneSimulator/Debug
+/BookingManager.iOS/bin
